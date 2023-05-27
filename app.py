@@ -4,19 +4,22 @@ app = Flask(__name__)
 
 REVIEWS = [{
   'id': 1,
-  'hall': "Kent Ridge Hall",
+  'timestamp': "6",
+  'hall': "kentridgehall",
   'rating': '4/5',
   'title': "Amazing Hall",
   "content": "Great location! Really near to the NUS Business School"
 }, {
   'id': 2,
-  'hall': "Raffles Hall",
+  'timestamp': "10",
+  'hall': "raffleshall",
   'rating': '4.5/5',
   'title': "Great Experience",
   "content": "Good facilities. Gym newly renovated!"
 }, {
   'id': 3,
-  'hall': "Temasek Hall",
+  'timestamp': "20",
+  'hall': "temasekhall",
   'rating': '3.8/5',
   'title': "Really bad experience",
   "content": "Near to supper streatch. Amazing CCAs"
