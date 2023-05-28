@@ -1,22 +1,22 @@
 <div class="border-bottom" style="margin-bottom:50px;">
   <a href='#'>
-    /{{review['hall']}}
+    /{{review['hallId']}}
   </a>
 
   <span>
-    Posted {{review['timestamp']}} hours ago
+    Posted {{review['timePosted']}} hours ago
   </span>
                 
   <div>
-    <b>Rating:</b> {{review['rating']}}
+    <b>Rating:</b> {{review['reviewRating']}}
   </div>
                     
   <div>
     <h3 style='margin-top:2px'>
-      {{review['title']}}
+      {{review['reviewTitle']}}
     </h3>
     <p>
-      {{review['content']}}
+      {{review['reviewContent']}}
     </p>
   </div> 
 </div>

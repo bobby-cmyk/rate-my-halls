@@ -1,39 +1,19 @@
 from flask import Flask, render_template, jsonify
+from database import load_reviews_from_db
 
 app = Flask(__name__)
-
-REVIEWS = [{
-  'id': 1,
-  'timestamp': "6",
-  'hall': "kentridgehall",
-  'rating': '4/5',
-  'title': "Amazing Hall",
-  "content": "Great location! Really near to the NUS Business School"
-}, {
-  'id': 2,
-  'timestamp': "10",
-  'hall': "raffleshall",
-  'rating': '4.5/5',
-  'title': "Great Experience",
-  "content": "Good facilities. Gym newly renovated!"
-}, {
-  'id': 3,
-  'timestamp': "20",
-  'hall': "temasekhall",
-  'rating': '3.8/5',
-  'title': "Really bad experience",
-  "content": "Near to supper streatch. Amazing CCAs"
-}]
 
 
 @app.route("/")
 def main_page():
-  return render_template('home.html', reviews=REVIEWS)
+  reviews = load_reviews_from_db()
+  return render_template('home.html', reviews=reviews)
 
 
 @app.route("/api/reviews")
 def list_reviews():
-  return jsonify(REVIEWS)
+  reviews = load_reviews_from_db()
+  return jsonify(reviews)
 
 
 #Running locally, debug = true
