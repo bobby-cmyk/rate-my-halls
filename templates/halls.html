@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      All Halls - RateMyHall
+    </title>
+    {% include "bootstrap.html" %}
+  </head>
+  
+  <body>
+    {% include 'nav.html' %}
+    
+    <h3>All Halls</h3>
+    {% for hall in halls %}
+      <ul>
+        <li><a href='halls/{{hall.hallId}}'>{{hall.hallName}}</a></li>
+      </ul>
+    {% endfor %}
+
+    {% include "footer.html" %}
+    {% include "scripts.html" %}
+    
+  </body>
+</html>
