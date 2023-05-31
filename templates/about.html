@@ -2,20 +2,15 @@
 <html>
   <head>
     <title>
-      All Halls - {% include "website_name.html" %}
+      About - {% include "website_name.html" %}
     </title>
+
     {% include "bootstrap.html" %}
   </head>
-  
   <body>
     {% include 'nav.html' %}
     <div class='container'>
-      <h3>All Halls</h3>
-      {% for hall in halls %}
-        <ul>
-          <li><a href='halls/{{hall.hallId}}'>{{hall.hallName}}</a></li>
-        </ul>
-      {% endfor %}
+      <h3>About</h3>
     </div>
     {% include "footer.html" %}
     {% include "scripts.html" %}

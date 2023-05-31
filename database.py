@@ -51,16 +51,23 @@ def load_halls_from_db():
       halls.append(dict(zip(column_name, row)))
     return halls
 
+
 #Load a hall details
 def load_hall_from_db(id):
   with engine.connect() as conn:
-    result = conn.execute(text(f"SELECT * FROM halls WHERE hallId={id}"))
-    rows = []
+    result = conn.execute(
+      text(
+        f"SELECT * FROM reviews LEFT JOIN halls ON reviews.hallId = halls.hallId WHERE reviews.hallId={id}"
+      ))
+    result_all = result.all()
     column_name = result.keys()
-    for row in result.all():
-      rows.append(dict(zip(column_name, row)))
+    hall = []
+    for row in result_all:
+      hall.append(dict(zip(column_name, row)))
+    return hall
 
-    if len(rows) == 0:
-      return None
-    else:
-      return (rows[0])
+
+#Add review to db
+'''
+def add_review_db(hall_id, review):
+'''

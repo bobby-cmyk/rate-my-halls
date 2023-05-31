@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from database import load_reviews_from_db, load_review_from_db, load_halls_from_db, load_hall_from_db
 
 app = Flask(__name__)
@@ -48,6 +48,30 @@ def hall(id):
   if not hall:
     return "Page Not Found", 404
   return render_template('hallpage.html', hall=hall)
+
+
+@app.route("/halls/postreview", methods=["post"])
+def post_review():
+  # store this in DB
+  # send an email
+  # display an acknoledgement
+  data = request.form
+  return jsonify(data)
+
+
+@app.route("/about")
+def about():
+  return render_template('about.html')
+
+
+@app.route("/login")
+def login():
+  return render_template("login.html")
+
+
+@app.route("/signup")
+def signup():
+  return render_template("signup.html")
 
 
 #Running locally, debug = true

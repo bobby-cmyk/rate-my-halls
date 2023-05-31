@@ -3,20 +3,23 @@
     @{{review.hallName.replace(" ", "").lower()}}
   </a>
 
-  <span>
-    Posted {{review['timePosted']}} hours ago
+  <div>
+    
+  </div>
+    <b>Time Posted:</b> 
+    {{review.timePosted}}
   </span>
                 
   <div>
-    <b>Rating:</b> {{review['reviewRating']}}
+    <b>Rating:</b> {{review.reviewRating}}
   </div>
                     
   <div>
     <h3 style='margin-top:2px'>
-      {{review['reviewTitle']}}
+      {{review.reviewTitle}}
     </h3>
     <p>
-      {{review['reviewContent']}}
+      {{review.reviewContent}}
     </p>
   </div> 
 </div>

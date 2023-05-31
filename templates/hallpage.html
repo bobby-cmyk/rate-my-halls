@@ -2,15 +2,25 @@
 <html>
   <head>
     <title>
-      {{hall.hallName}} - RateMyHall
+      {{hall[0].hallName}} - {% include "website_name.html" %}
     </title>
 
     {% include "bootstrap.html" %}
   </head>
   <body>
     {% include 'nav.html' %}
-    <h3>{{hall.hallName}}</h3>
-
+    <div class='container'>
+      <h3>{{hall[0].hallName}}</h3>
+      {% include "post_review.html" %}
+    </div>
+    <div class='container'>
+      <h2 style='margin-bottom:30px'>Recent Reviews</h2>
+      <div>
+        {% for review in hall %}
+          {% include 'reviewsitems.html' %}
+        {% endfor %}
+      </div>
+    </div>
     {% include "footer.html" %}
     {% include "scripts.html" %}
     

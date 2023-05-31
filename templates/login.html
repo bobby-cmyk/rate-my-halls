@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Log in - {% include "website_name.html" %}
+    </title>
+
+    {% include "bootstrap.html" %}
+    <style>
+      .logincontainer {
+        width:400px;
+        margin-left:auto;
+        margin-right:auto;
+        padding:25px 50px;
+        margin-top:25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="border border-light-subtle logincontainer" style='margin-top:25px;padding:25px 50px;margin-top:25px;'>
+      
+      <h3 class="text-center" style='margin-bottom:25px'><b>Rate</b>Uni</h3>
+      
+      <form method="POST">
+        <div class="mb-2">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" name="userEmail">
+        </div>
+        <div class="mb-2">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="userPassword">
+        </div>
+        <div class="d-grid gap-2" style='margin-top:20px'>
+          <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+      </form>
+    </div>
+    <div class="border border-light-subtle logincontainer" style="text-align: center">
+      <span>Don't have an account yet? </span><a href='/signup'>Sign up</a>
+    </div>
+    {% include "footer.html" %}
+    {% include "scripts.html" %}
+    
+  </body>
+</html>
+  
