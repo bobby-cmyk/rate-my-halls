@@ -9,11 +9,39 @@
     {% include 'nav.html' %}
     
     <div class='container'>
-      <h2 style='margin-bottom:30px'>Recent Reviews</h2>
-      <div>
-        {% for review in reviews %}
-          {% include 'reviewsitems.html' %}
-        {% endfor %}
+      <div class="row">
+        <div class='col'>
+            <h3 class="display-6 ms-1 mb-3 mt-3">Recent Reviews</h3>
+            <div>
+            {% for review in reviews %}
+              {% include 'reviewsitems.html' %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class='col-4 d-none d-lg-block'>
+             <h2 class="mb-3 mt-3">All Halls</h2>
+              <div class="row border border-light-subtle rounded-2 ms-1 me-1 p-1">
+                <div>
+                  <ul>
+                    <li>
+                      hall 1
+                    </li>
+                    <li>
+                      hall 2
+                    </li>
+                    <li>
+                      hall 3
+                    </li>
+                    <li>
+                      hall 4
+                    </li>
+                    <li>
+                      hall 5
+                    </li>
+                  </ul>
+                </div>
+              </div>
+        </div>
       </div>
     </div>
 

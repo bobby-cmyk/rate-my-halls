@@ -1,25 +1,23 @@
-<div class="border-bottom" style="margin-bottom:50px;">
-  <a href='/halls/{{review.hallId}}'>
-    @{{review.hallName.replace(" ", "").lower()}}
-  </a>
-
-  <div>
-    
-  </div>
-    <b>Time Posted:</b> 
-    {{review.timePosted}}
-  </span>
-                
-  <div>
-    <b>Rating:</b> {{review.reviewRating}}
-  </div>
-                    
-  <div>
-    <h3 style='margin-top:2px'>
-      {{review.reviewTitle}}
-    </h3>
-    <p>
-      {{review.reviewContent}}
-    </p>
-  </div> 
+<div class="row border border-light-subtle rounded-2 mb-3 ms-1 me-1 p-1">
+    <div class="row">
+      <a href='/halls/{{review.hallId}}'>
+        <b>@{{review.hallName.replace(" ", "").lower()}}</b>
+      </a> 
+      <div>
+        Posted by <i>User123</i> {{review.timePosted}} ago 
+      </div> 
+      <div>
+        <b>Rating:</b> {{review.reviewRating}}
+      </div>        
+      <h4 style='margin-top:2px'>
+        {{review.reviewTitle}}
+      </h4>
+      <p>
+        {{review.reviewContent}}
+      </p>
+    </div>
+    <div>
+      <button type="button" class="btn btn-outline-primary btn-sm">18 Likes</button>
+      <button type="button" class="btn btn-outline-primary btn-sm">46 Comments</button>
+    </div>
 </div>
